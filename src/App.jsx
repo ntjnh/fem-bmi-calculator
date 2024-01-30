@@ -1,11 +1,14 @@
-import './App.css'
+import Form from './components/Form'
+import Header from './components/Header'
 
 function App() {
 
   return (
-    <>
-      <h1>Body Mass Index Calculator</h1>
-    </>
+    <div className="container mx-auto">
+      <Header />
+
+      <Form />
+    </div>
   )
 }
 

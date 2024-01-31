@@ -1,4 +1,11 @@
 export default function Form() {
+
+    const heightMetric = 1.55
+    const weightMetric = 60
+    const bmi = weightMetric/(heightMetric * heightMetric)
+
+    console.log(bmi)
+
     return (
         <form>
             <h2>Enter your details below</h2>
@@ -18,13 +25,13 @@ export default function Form() {
             <div>
                 <div>
                     <label htmlFor="height">Height</label>
-                    <input type="number" name="height" id="height" />
+                    <input className="border border-black" type="number" name="height" id="height" />
                     <span className="unit-height">cm</span>
                 </div>
 
                 <div>
                     <label htmlFor="weight">Weight</label>
-                    <input type="number" name="weight" id="weight" />
+                    <input className="border border-black" type="number" name="weight" id="weight" />
                     <span className="unit-weight">kg</span>
                 </div>
             </div>

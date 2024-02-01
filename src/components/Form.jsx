@@ -1,13 +1,7 @@
 import { useState } from 'react'
 
 export default function Form() {
-
-    const heightMetric = 1.55
-    const weightMetric = 62
-    const bmi = weightMetric/(heightMetric * heightMetric)
-
-    console.log(Number(bmi.toFixed(1)))
-
+    const [bmiResult, setBmiResult] = useState(0)
     const [height, setHeight] = useState(0)
     const [weight, setWeight] = useState(0)
 
@@ -19,13 +13,21 @@ export default function Form() {
         setWeight(e.target.value)
     }
 
+    const heightMetric = height
+    const weightMetric = weight
+    const bmi = weightMetric/(heightMetric * heightMetric)
+
+    function handleBmiChange() {
+        setBmiResult(bmi.toFixed(1))
+    }
+
     return (
-        <form>
+        <form onChange={handleBmiChange}>
             <h2>Enter your details below</h2>
 
             <div>
                 <div>
-                    <input type="radio" name="units" id="metric" />
+                    <input type="radio" name="units" id="metric" checked />
                     <label htmlFor="metric">Metric</label>
                 </div>
 
@@ -54,8 +56,10 @@ export default function Form() {
 
                 <p>Enter your height and weight and you&rsquo;ll see your BMI result here.</p>
 
-                <p><strong>Height:</strong> {height}</p>
-                <p><strong>Weight:</strong> {weight}</p>
+                <p><strong>Height:</strong> {height}cm</p>
+                <p><strong>Weight:</strong> {weight}kg</p>
+
+                <h4>Your BMI is {bmiResult}</h4>
             </div>
         </form>
     )

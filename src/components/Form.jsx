@@ -15,10 +15,11 @@ export default function Form() {
 
     const heightMetric = height
     const weightMetric = weight
-    const bmi = weightMetric/(heightMetric * heightMetric)
+    const bmiCalculation = weightMetric/(heightMetric * heightMetric)
+    const bmi = Math.round(bmiCalculation * 10) / 10
 
     function handleBmiChange() {
-        setBmiResult(bmi.toFixed(1))
+        setBmiResult(bmi)
     }
 
     return (

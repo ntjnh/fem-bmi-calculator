@@ -5,7 +5,13 @@ export default {
     fontFamily: {
       sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
     },
-    extend: {},
+    extend: {
+      colors: {
+        slate: {
+          820: '#141f33'
+        }
+      }
+    },
   },
   plugins: [],
 }

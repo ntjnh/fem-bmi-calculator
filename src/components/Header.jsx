@@ -1,16 +1,31 @@
+import logo from '../assets/img/heart.svg'
 import Form from './Form'
 
 export default function Header() {
     return (
-        <header className="flex">
-            <div className="w-1/2">
-                <h1 className="font-semibold text-5xl">Body Mass Index Calculator</h1>
-                <p>Better understand your weight in relation to your height using our body mass index (BMI) calculator. While BMI is not the sole determinant of a healthy weight, it offers a valuable starting point to evaluate your overall health and wellbeing.</p>
+        <header className="bg-gradient-to-r from-white to-cyan-50 py-16">
+
+            <div className="container mx-auto">
+
+                <div className="mb-12">
+                    <img className="w-[60px]" src={logo} alt="Site logo" />
+                </div>
+
+                <div className="flex flex-wrap">
+
+                    <div className="w-1/2">
+                        <h1 className="font-semibold text-5xl">Body Mass Index Calculator</h1>
+                        <p>Better understand your weight in relation to your height using our body mass index (BMI) calculator. While BMI is not the sole determinant of a healthy weight, it offers a valuable starting point to evaluate your overall health and wellbeing.</p>
+                    </div>
+
+                    <section className="w-1/2">
+                        <Form />
+                    </section>
+
+                </div>
+
             </div>
 
-            <section className="w-1/2">
-                <Form />
-            </section>
         </header>
     )
 }

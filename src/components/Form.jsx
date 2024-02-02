@@ -23,44 +23,42 @@ export default function Form() {
     }
 
     return (
-        <form onChange={handleBmiChange}>
-            <h2>Enter your details below</h2>
+        <form className="bg-white drop-shadow-2xl ml-auto p-9 rounded-2xl w-4/5" onChange={handleBmiChange}>
+            <h2 className="font-semibold mb-8 text-2xl tracking-tight">Enter your details below</h2>
 
-            <div>
-                <div>
-                    <input type="radio" name="units" id="metric" checked />
-                    <label htmlFor="metric">Metric</label>
+            <div className="flex mb-9">
+                <div className="inline-block w-1/2">
+                    <input className="mr-4" type="radio" name="units" id="metric" checked />
+                    <label className="font-semibold text-lg" htmlFor="metric">Metric</label>
                 </div>
 
-                <div>
-                    <input type="radio" name="units" id="imperial" />
-                    <label htmlFor="imperial">Imperial</label>
-                </div>
-            </div>
-
-            <div>
-                <div>
-                    <label htmlFor="height">Height</label>
-                    <input className="border border-black" type="number" name="height" id="height" onChange={handleHeightChange} />
-                    <span className="unit-height">cm</span>
-                </div>
-
-                <div>
-                    <label htmlFor="weight">Weight</label>
-                    <input className="border border-black" type="number" name="weight" id="weight" onChange={handleWeightChange} />
-                    <span className="unit-weight">kg</span>
+                <div className="inline-block w-1/2">
+                    <input className="mr-4" type="radio" name="units" id="imperial" />
+                    <label className="font-semibold text-lg" htmlFor="imperial">Imperial</label>
                 </div>
             </div>
 
-            <div>
+            <div className="flex justify-between pt-6">
+                <div className="inline-block relative w-[48%]">
+                    <label className="absolute -top-8" htmlFor="height">Height</label>
+                    <input className="border border-[#e0e1e3] p-6 rounded-xl w-full" type="number" name="height" id="height" onChange={handleHeightChange} placeholder="0" />
+                    <span className="absolute align-middle inline-block leading-none right-6 top-7 unit-height">cm</span>
+                </div>
+
+                <div className="inline-block relative w-[48%]">
+                    <label className="absolute -top-8" htmlFor="weight">Weight</label>
+                    <input className="border border-[#e0e1e3] p-6 rounded-xl w-full" type="number" name="weight" id="weight" onChange={handleWeightChange} placeholder="0" />
+                    <span className="absolute align-middle inline-block leading-none right-6 top-7 unit-weight">kg</span>
+                </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-500 to-blue-400 mt-8 p-8 rounded-l-md rounded-r-full text-white">
+                {/* #3460F6 - #5C7FF7 */}
                 <h3>Welcome!</h3>
 
                 <p>Enter your height and weight and you&rsquo;ll see your BMI result here.</p>
 
-                <p><strong>Height:</strong> {height}cm</p>
-                <p><strong>Weight:</strong> {weight}kg</p>
-
-                <h4>Your BMI is {bmiResult}</h4>
+                {/* <h4>Your BMI is {bmiResult}</h4> */}
             </div>
         </form>
     )

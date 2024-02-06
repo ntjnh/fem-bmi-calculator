@@ -1,6 +1,14 @@
 import { useState } from 'react'
+import Result from './Result'
 
 export default function Form() {
+    const starterText = (
+        <div>
+            <h3>Welcome!</h3>
+
+            <p>Enter your height and weight and you&rsquo;ll see your BMI result here.</p>
+        </div>
+    )
     const [bmiResult, setBmiResult] = useState(0)
     const [height, setHeight] = useState(0)
     const [weight, setWeight] = useState(0)
@@ -52,13 +60,10 @@ export default function Form() {
                 </div>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-500 to-blue-400 mt-8 p-8 rounded-l-md rounded-r-full text-white">
-                {/* #3460F6 - #5C7FF7 */}
-                <h3>Welcome!</h3>
+            <div className="bg-gradient-to-r from-blue-500 to-blue-400 mt-8 px-6 py-8 rounded-l-md rounded-r-full text-white">
 
-                <p>Enter your height and weight and you&rsquo;ll see your BMI result here.</p>
-
-                {/* <h4>Your BMI is {bmiResult}</h4> */}
+                {bmiResult ? <Result bmi={bmiResult} /> : starterText}
+                
             </div>
         </form>
     )

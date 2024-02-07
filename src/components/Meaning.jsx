@@ -2,7 +2,7 @@ import manEatingImage from '../assets/img/image-man-eating.webp'
 
 export default function Meaning() {
     return (
-        <section className="flex">
+        <section className="flex pt-20 pb-24">
             <div className="w-1/2">
                 <img className="max-w-full" src={manEatingImage} alt="Man eating sushi" />
             </div>

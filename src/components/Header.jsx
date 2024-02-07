@@ -15,7 +15,7 @@ export default function Header() {
 
                     <div className="w-1/2">
                         <h1 className="font-medium leading-[1.125] mb-12 text-[64px] tracking-tighter">Body Mass <br />Index Calculator</h1>
-                        <p className="text-[#596271] w-3/4">Better understand your weight in relation to your height using our body mass index (BMI) calculator. While BMI is not the sole determinant of a healthy weight, it offers a valuable starting point to evaluate your overall health and wellbeing.</p>
+                        <p className="text-slate-550 w-3/4">Better understand your weight in relation to your height using our body mass index (BMI) calculator. While BMI is not the sole determinant of a healthy weight, it offers a valuable starting point to evaluate your overall health and wellbeing.</p>
                     </div>
 
                     <section className="w-1/2">

@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         slate: {
+          550: '#596271',
           820: '#141f33'
         }
       }

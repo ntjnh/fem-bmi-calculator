@@ -36,7 +36,7 @@ export default function Form() {
 
             <div className="flex mb-9">
                 <div className="inline-block w-1/2">
-                    <input className="mr-4" type="radio" name="units" id="metric" checked />
+                    <input className="mr-4" type="radio" name="units" id="metric" />
                     <label className="font-semibold text-lg" htmlFor="metric">Metric</label>
                 </div>
 

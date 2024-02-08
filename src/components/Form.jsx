@@ -60,7 +60,7 @@ export default function Form() {
                 </div>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-500 to-blue-400 mt-8 px-6 py-8 rounded-l-md rounded-r-full text-white">
+            <div className="bg-gradient-to-r from-blue-500 to-blue-400 mt-8 px-6 py-8 text-white">
 
                 {bmiResult ? <Result bmi={bmiResult} /> : starterText}
                 

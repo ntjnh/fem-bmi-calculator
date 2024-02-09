@@ -4,9 +4,9 @@ import Result from './Result'
 export default function Form() {
     const starterText = (
         <div>
-            <h3>Welcome!</h3>
+            <h3 className="font-medium mb-4 text-xl tracking-tight">Welcome!</h3>
 
-            <p>Enter your height and weight and you&rsquo;ll see your BMI result here.</p>
+            <p className="font-light text-sm">Enter your height and weight and you&rsquo;ll see your BMI result here.</p>
         </div>
     )
     const [bmiResult, setBmiResult] = useState(0)
@@ -60,7 +60,7 @@ export default function Form() {
                 </div>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-500 to-blue-400 mt-8 px-6 py-8 text-white">
+            <div className="bg-gradient-to-r from-blue-500 to-blue-400 mt-8 px-6 py-8 rounded-lg text-white">
 
                 {bmiResult ? <Result bmi={bmiResult} /> : starterText}
                 

@@ -23,8 +23,8 @@ export default function Tips() {
 
     const tips = tipsContent.map((tip, i) => {
         return (
-            <article key={i} className="w-[33%]">
-                <img className="mb-10" src={tip.icon} />
+            <article key={i} className="pb-10 md:pb-0 w-full md:w-[33%]">
+                <img className="mb-7 md:mb-10" src={tip.icon} />
                 <h3 className="font-semibold mb-7 text-2xl tracking-tighter">{tip.heading}</h3>
                 <p className="max-w-[360px] text-slate-550">{tip.paragraph}</p>
             </article>
@@ -32,7 +32,7 @@ export default function Tips() {
     })
 
     return (
-        <section className="bg-gradient-to-r from-white to-cyan-50 flex items-center justify-between mb-16 py-16 rounded-e-3xl">
+        <section className="bg-gradient-to-r from-white to-cyan-50 flex flex-wrap items-center justify-between mb-16 px-6 md:px-0 pb-2 pt-12 md:py-16 rounded-e-3xl">
             {tips}
         </section>
     )

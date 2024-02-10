@@ -25,14 +25,14 @@ export default function Tips() {
         return (
             <article key={i} className="pb-10 md:pb-0 w-full md:w-[33%]">
                 <img className="mb-7 md:mb-10" src={tip.icon} />
-                <h3 className="font-semibold mb-7 text-2xl tracking-tighter">{tip.heading}</h3>
+                <h3 className="font-semibold mb-6 md:mb-7 text-2xl tracking-tighter">{tip.heading}</h3>
                 <p className="max-w-[360px] text-slate-550">{tip.paragraph}</p>
             </article>
         )
     })
 
     return (
-        <section className="bg-gradient-to-r from-white to-cyan-50 flex flex-wrap items-center justify-between mb-16 px-6 md:px-0 pb-2 pt-12 md:py-16 rounded-e-3xl">
+        <section className="bg-gradient-to-r from-white to-cyan-50 flex flex-wrap items-center justify-between mb-[72px] md:mb-16 px-6 md:px-0 pb-4 pt-12 md:py-16 rounded-e-3xl">
             {tips}
         </section>
     )

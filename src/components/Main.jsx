@@ -5,15 +5,13 @@ import Tips from "./Tips";
 export default function Main() {
     return (
         <main>
-            <div className="container mx-auto">
                 
-                <Meaning />
+            <Meaning />
 
-                <Tips />
+            <Tips />
 
-                <Limitations />
+            <Limitations />
 
-            </div>
         </main>
     )
 }

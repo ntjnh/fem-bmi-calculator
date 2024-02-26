@@ -3,7 +3,14 @@ export default function Result(props) {
         <div className="flex flex-wrap">
             <div className="mb-6 md:mb-0 w-full md:w-1/3">
                 <h4 className="mb-4 md:mb-0">Your BMI is...</h4>
-                <h5 className="text-5xl md:text-4xl">{props.bmi}</h5>
+                <input 
+                    className="bg-transparent inline-block min-w-min text-5xl md:text-4xl" 
+                    type="text" 
+                    name="bmi" 
+                    id="bmi" 
+                    value={props.bmi}
+                    readOnly 
+                />
             </div>
 
             <div className="md:pl-2 w-full md:w-2/3">

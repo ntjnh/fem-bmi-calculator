@@ -32,8 +32,12 @@ export default function Tips() {
     })
 
     return (
-        <section className="bg-gradient-to-r from-white to-cyan-50 flex flex-wrap items-center justify-between mb-[72px] md:mb-16 px-6 md:px-0 pb-4 pt-12 md:py-16 rounded-e-3xl">
-            {tips}
+        <section className="bg-gradient-to-r from-white to-cyan-50 px-6 md:px-0 pb-4 pt-12 md:py-28">
+            <div className="container">
+                <div className="flex flex-wrap items-center justify-between">
+                    {tips}
+                </div>
+            </div>
         </section>
     )
 }

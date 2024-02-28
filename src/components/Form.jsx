@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Result from './Result'
+import calculation from '../functions/calculation'
 
 export default function Form() {
     const starterText = (
@@ -13,12 +14,8 @@ export default function Form() {
     const [height, setHeight] = useState('')
     const [weight, setWeight] = useState('')
 
-    function handleHeightChange(e) {
-        setHeight(e.target.value)
-    }
-
-    function handleWeightChange(e) {
-        setWeight(e.target.value) 
+    function handleUnitChange(e) {
+        setUnits(e.target.value)
     }
 
     function handleSubmit(e) {
@@ -26,10 +23,11 @@ export default function Form() {
         setBmiResult(bmi)
     }
 
-    const heightMetric = height / 100
-    const weightMetric = weight
-    const bmiCalculation = weightMetric/(heightMetric * heightMetric)
-    const bmi = Math.round(bmiCalculation * 10) / 10
+    // const heightMetric = height / 100
+    // const weightMetric = weight
+    // const bmiCalculation = weightMetric/(heightMetric * heightMetric)
+    // const bmi = Math.round(bmiCalculation * 10) / 10
+    const bmi = calculation(units, height, weight)
 
     return (
         <form className="bg-white drop-shadow-2xl p-6 md:p-9 rounded-2xl" onSubmit={handleSubmit}>
@@ -38,14 +36,14 @@ export default function Form() {
             <div className="flex mb-7 md:mb-10">
                 <div className="w-1/2">
                     <label className="radio-wrap" htmlFor="metric">Metric
-                        <input type="radio" name="units" id="metric" />
+                        <input type="radio" name="units" id="metric" value="metric" onChange={handleUnitChange} />
                         <span className="button-radio"></span>
                     </label>
                 </div>
 
                 <div className="w-1/2">
                     <label className="radio-wrap" htmlFor="imperial">Imperial
-                        <input type="radio" name="units" id="imperial" />
+                        <input type="radio" name="units" id="imperial" value="imperial" onChange={handleUnitChange} />
                         <span className="button-radio"></span>
                     </label>
                 </div>
@@ -60,7 +58,7 @@ export default function Form() {
                         name="height" 
                         id="height" 
                         value={height}
-                        onChange={handleHeightChange} 
+                        onChange={e => setHeight(e.target.value)} 
                         placeholder="0"
                     />
                     <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-height">cm</span>
@@ -74,7 +72,7 @@ export default function Form() {
                         name="weight" 
                         id="weight" 
                         value={weight}
-                        onChange={handleWeightChange} 
+                        onChange={e => setWeight(e.target.value)} 
                         placeholder="0" 
                     />
                     <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-weight">kg</span>

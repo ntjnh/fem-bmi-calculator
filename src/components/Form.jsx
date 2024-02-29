@@ -10,24 +10,32 @@ export default function Form() {
             <p className="font-light text-sm">Enter your height and weight and you&rsquo;ll see your BMI result here.</p>
         </div>
     )
+
+    const [units, setUnits] = useState('metric')
+    // let heightUnit = 'cm'
+    // let weightUnit = 'kg'
     const [bmiResult, setBmiResult] = useState(0)
     const [height, setHeight] = useState('')
     const [weight, setWeight] = useState('')
 
     function handleUnitChange(e) {
         setUnits(e.target.value)
+
+        // if (units === 'imperial') {
+        //     heightUnit = 'ft'
+        //     weightUnit = 'lbs'
+        // } else {
+        //     heightUnit = 'cm'
+        //     weightUnit = 'kg'
+        // }
     }
 
     function handleSubmit(e) {
         e.preventDefault()
+
+        const bmi = calculation(units, height, weight)
         setBmiResult(bmi)
     }
-
-    // const heightMetric = height / 100
-    // const weightMetric = weight
-    // const bmiCalculation = weightMetric/(heightMetric * heightMetric)
-    // const bmi = Math.round(bmiCalculation * 10) / 10
-    const bmi = calculation(units, height, weight)
 
     return (
         <form className="bg-white drop-shadow-2xl p-6 md:p-9 rounded-2xl" onSubmit={handleSubmit}>
@@ -36,14 +44,14 @@ export default function Form() {
             <div className="flex mb-7 md:mb-10">
                 <div className="w-1/2">
                     <label className="radio-wrap" htmlFor="metric">Metric
-                        <input type="radio" name="units" id="metric" value="metric" onChange={handleUnitChange} />
+                        <input type="radio" name="units" id="metric" value="metric" onChange={e => handleUnitChange(e)} />
                         <span className="button-radio"></span>
                     </label>
                 </div>
 
                 <div className="w-1/2">
                     <label className="radio-wrap" htmlFor="imperial">Imperial
-                        <input type="radio" name="units" id="imperial" value="imperial" onChange={handleUnitChange} />
+                        <input type="radio" name="units" id="imperial" value="imperial" onChange={e => handleUnitChange(e)} />
                         <span className="button-radio"></span>
                     </label>
                 </div>

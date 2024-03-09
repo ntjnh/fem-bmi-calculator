@@ -18,8 +18,17 @@ export default function Form() {
     const [height, setHeight] = useState('')
     const [weight, setWeight] = useState('')
 
+    let showMetric = true
+    let showImperial = false
+
+    const metricClass = showMetric ? 'block' : 'hidden'
+    const imperialClass = showImperial ? 'block' : 'hidden'
+
     function handleUnitChange(e) {
         setUnits(e.target.value)
+
+        showMetric = !showMetric
+        showImperial = !showImperial
 
         // if (units === 'imperial') {
         //     heightUnit = 'ft'
@@ -44,7 +53,7 @@ export default function Form() {
             <div className="flex mb-7 md:mb-10">
                 <div className="w-1/2">
                     <label className="radio-wrap" htmlFor="metric">Metric
-                        <input type="radio" name="units" id="metric" value="metric" onChange={e => handleUnitChange(e)} />
+                        <input type="radio" name="units" id="metric" value="metric" onChange={e => handleUnitChange(e)} defaultChecked />
                         <span className="button-radio"></span>
                     </label>
                 </div>
@@ -57,7 +66,9 @@ export default function Form() {
                 </div>
             </div>
 
-            <div className="flex flex-wrap justify-between pt-6">
+            {/* Metric */}
+
+            <div className={`flex flex-wrap justify-between pt-6 ${metricClass}`}>
                 <div className="inline-block mb-11 md:mb-0 relative w-full md:w-[48%]">
                     <label className="absolute -top-7 md:-top-8 text-slate-550 text-sm md:text-base" htmlFor="height">Height</label>
                     <input 
@@ -84,6 +95,67 @@ export default function Form() {
                         placeholder="0" 
                     />
                     <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-weight">kg</span>
+                </div>
+            </div>
+
+
+            {/* Imperial */}
+
+            <div className={`flex flex-wrap justify-between pt-6 ${imperialClass}`}>
+                <div className="inline-block mb-11 md:mb-0 relative w-full md:w-[24%]">
+                    <label className="absolute -top-7 md:-top-8 text-slate-550 text-sm md:text-base" htmlFor="height">Height</label>
+                    <input 
+                        className="border border-[#e0e1e3] p-[22px] md:p-6 rounded-xl font-semibold leading-none text-[22px] w-full placeholder:text-[#C6C6C8]" 
+                        type="number" 
+                        name="height" 
+                        id="height" 
+                        value={height}
+                        onChange={e => setHeight(e.target.value)} 
+                        placeholder="0"
+                    />
+                    <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-height">ft</span>
+                </div>
+
+                <div className="inline-block mb-11 md:mb-0 relative w-full md:w-[24%]">
+                    <label className="hidden" htmlFor="height">Height</label>
+                    <input 
+                        className="border border-[#e0e1e3] p-[22px] md:p-6 rounded-xl font-semibold leading-none text-[22px] w-full placeholder:text-[#C6C6C8]" 
+                        type="number" 
+                        name="height" 
+                        id="height" 
+                        value={height}
+                        onChange={e => setHeight(e.target.value)} 
+                        placeholder="0"
+                    />
+                    <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-height">in</span>
+                </div>
+
+                <div className="inline-block relative w-full md:w-[24%]">
+                    <label className="absolute -top-7 md:-top-8 text-slate-550 text-sm md:text-base" htmlFor="weight">Weight</label>
+                    <input 
+                        className="border border-[#e0e1e3] p-[22px] md:p-6 rounded-xl font-semibold leading-none text-[22px] w-full placeholder:text-[#C6C6C8]" 
+                        type="number" 
+                        name="weight" 
+                        id="weight" 
+                        value={weight}
+                        onChange={e => setWeight(e.target.value)} 
+                        placeholder="0" 
+                    />
+                    <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-weight">st</span>
+                </div>
+
+                <div className="inline-block relative w-full md:w-[24%]">
+                    <label className="hidden" htmlFor="weight">Weight</label>
+                    <input 
+                        className="border border-[#e0e1e3] p-[22px] md:p-6 rounded-xl font-semibold leading-none text-[22px] w-full placeholder:text-[#C6C6C8]" 
+                        type="number" 
+                        name="weight" 
+                        id="weight" 
+                        value={weight}
+                        onChange={e => setWeight(e.target.value)} 
+                        placeholder="0" 
+                    />
+                    <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-weight">lbs</span>
                 </div>
             </div>
 

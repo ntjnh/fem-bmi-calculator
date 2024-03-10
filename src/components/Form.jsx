@@ -50,7 +50,7 @@ export default function Form() {
                     onChange={e => setHeight(e.target.value)} 
                     placeholder="188"
                 />
-                <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-height">cm</span>
+                <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-7 unit-height">cm</span>
             </div>
 
             <div className="inline-block relative w-full md:w-[48%]">
@@ -64,7 +64,7 @@ export default function Form() {
                     onChange={e => setWeight(e.target.value)} 
                     placeholder="80.3" 
                 />
-                <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-weight">kg</span>
+                <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-7 unit-weight">kg</span>
             </div>
         </div>
     )
@@ -82,7 +82,7 @@ export default function Form() {
                     onChange={e => setHeightFt(e.target.value)} 
                     placeholder="6"
                 />
-                <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-height">ft</span>
+                <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-7 unit-height">ft</span>
             </div>
 
             <div className="inline-block mb-11 md:mb-0 relative w-full md:w-[24%]">
@@ -96,7 +96,7 @@ export default function Form() {
                     onChange={e => setHeightIn(e.target.value)} 
                     placeholder="2"
                 />
-                <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-height">in</span>
+                <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-7 unit-height">in</span>
             </div>
 
             <div className="inline-block relative w-full md:w-[24%]">
@@ -110,7 +110,7 @@ export default function Form() {
                     onChange={e => setWeightSt(e.target.value)} 
                     placeholder="12" 
                 />
-                <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-weight">st</span>
+                <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-7 unit-weight">st</span>
             </div>
 
             <div className="inline-block relative w-full md:w-[24%]">
@@ -124,7 +124,7 @@ export default function Form() {
                     onChange={e => setWeightLbs(e.target.value)} 
                     placeholder="9" 
                 />
-                <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-6 unit-weight">lbs</span>
+                <span className="absolute align-middle font-semibold inline-block leading-none right-6 text-blue-500 text-[23px] top-7 unit-weight">lbs</span>
             </div>
         </div>
     )

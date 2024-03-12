@@ -1,16 +1,42 @@
-import data from '../data/limitations'
 import iconGender from '../assets/img/icon-gender.svg'
 import iconAge from '../assets/img/icon-age.svg'
 import iconMuscle from '../assets/img/icon-muscle.svg'
 import iconPregnancy from '../assets/img/icon-pregnancy.svg'
 import iconRace from '../assets/img/icon-race.svg'
-const icons = [iconGender, iconAge, iconMuscle, iconPregnancy, iconRace]
 
-const limitations = data.map((item, i) => {
+const limitationsContent = [
+    {
+        icon: iconGender,
+        heading: 'Gender',
+        paragraph: 'The development and body fat composition of girls and boys vary with age. Consequently, a child’s age and gender are considered when evaluating their BMI.'
+    },
+    {
+        icon: iconAge,
+        heading: 'Age',
+        paragraph: 'In aging individuals, increased body fat and muscle loss may cause BMI to underestimate body fat content.'
+    },
+    {
+        icon: iconMuscle,
+        heading: 'Muscle',
+        paragraph: 'BMI may misclassify muscular individuals as overweight or obese, as it doesn’t differentiate muscle from fat.'
+    },
+    {
+        icon: iconPregnancy,
+        heading: 'Pregnancy',
+        paragraph: 'Expectant mothers experience weight gain due to their growing baby. Maintaining a healthy pre-pregnancy BMI is advisable to minimise health risks for both mother and child.'
+    },
+    {
+        icon: iconRace,
+        heading: 'Race',
+        paragraph: 'Certain health concerns may affect individuals of some Black and Asian origins at lower BMIs than others. To learn more, it is advised to discuss this with your GP or practice nurse.'
+    }
+]
+
+const limitations = limitationsContent.map((item, i) => {
     return (
         <article className={`bg-white drop-shadow-lg p-6 md:p-8 rounded-xl`} key={i}>
             <h3 className="font-semibold inline-block mb-5 md:mb-6 pl-10 relative text-xl tracking-tight">
-                <span className="absolute bg-center bg-contain bg-no-repeat h-7 inline-block left-0 w-7" style={{ backgroundImage: `url(${icons[i]})`}}></span>
+                <span className="absolute bg-center bg-contain bg-no-repeat h-7 inline-block left-0 w-7" style={{ backgroundImage: `url(${item.icon})`}}></span>
                 {item.heading}
             </h3>
             <p className="text-slate-550">{item.paragraph}</p>
